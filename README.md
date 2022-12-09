@@ -16,6 +16,8 @@ Why do I need this?
 ## Soldering
 will add if you need
 
+![esp8266](https://github.com/krol44/control-stand-mic-led/blob/master/content/esp.jpg?raw=true)
+
 ## setup windows
 edit hosts (example):
 #ip of esp
