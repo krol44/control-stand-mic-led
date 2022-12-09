@@ -70,3 +70,7 @@ Commands ampy: https://github.com/scientifichackers/ampy
   rmdir  Forcefully remove a folder and all its children from the board.
   run    Run a script and print its output.
 ```
+
+## synonym
+Pantograph Alctron MA616XL
+Gator Professional Broadcast Boom Mic Stand with LED Light
