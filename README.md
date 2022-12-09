@@ -1,18 +1,27 @@
-##### Pantograph Alctron MA616XL has the LED, and set of scripts will be allowing to control it
-## Demo
-`How is it working? In the windows is listening default microphone and the sound level is checked on volume after sending state on or off to the esp8266 v3`
+Pantograph Alctron MA616XL has the LED, and set of scripts will be allowing to control it
+===
+How is it working?
+* In the windows is listening default microphone and the sound level check on volume after sending state on or off to the esp8266 v3
+Next, esp is clicking on the button on the pantograph :yum:
 
+Why do I need this?
+* Pantographs with LED are very expensive ($1000+) with control
+
+## Demo
 ![Pantograph Alctron MA616XL demo](https://github.com/krol44/control-stand-mic-led/blob/master/content/demo.gif?raw=true)
 
-### important
+## important
 **this is not full manual :sweat_smile: if you need more information - create issue**
+
+## Soldering
+will add if you need
 
 ## setup windows
 edit hosts (example):
 #ip of esp
 192.168.1.44    esp-stand-mic.krol44.com
 
-run - 
+run exe, more information is here https://github.com/krol44/control-stand-mic-led/tree/master/soft-stand-mic-led#readme
 
 ## setup esp
 `pip install esptool`
