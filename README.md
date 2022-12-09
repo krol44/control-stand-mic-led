@@ -1,8 +1,9 @@
-Pantograph Alctron MA616XL has the LED, and set of scripts will be allowing to control it
+Pantograph Alctron MA616XL has the LED, and set of scripts will be allowing to control it :mage_man:
 ===
 How is it working?
-* In the windows is listening default microphone and the sound level check on volume after sending state on or off to the esp8266 v3
-Next, esp is clicking on the button on the pantograph :yum:
+* In the windows is listening default microphone and the sound level check on volume
+* Аfter sending state on or off to the esp8266 v3
+* Next, esp is clicking on the button on the pantograph :yum:
 
 Why do I need this?
 * Pantographs with LED are very expensive ($1000+) with control
@@ -13,21 +14,15 @@ Why do I need this?
 ## important
 **this is not full manual :sweat_smile: if you need more information - create issue**
 
-## Soldering
+## soldering
 will add if you need
 
 ![esp8266](https://github.com/krol44/control-stand-mic-led/blob/master/content/esp.jpg?raw=true)
 
-## setup windows
-edit hosts (example):
-#ip of esp
-192.168.1.44    esp-stand-mic.krol44.com
-
-run exe, more information is here https://github.com/krol44/control-stand-mic-led/tree/master/soft-stand-mic-led#readme
-
 ## setup esp
 `pip install esptool`
-`pip install adafruit-ampy `https://github.com/scientifichackers/ampy`
+
+`pip install adafruit-ampy`
 
 ### Flash MicroPython
 /dev/tty.usbserial-0001 - device esp
@@ -50,12 +45,22 @@ setup var:
 ### put main.py to the esp
 `ampy -p /dev/tty.usbserial-0001 -b 96000 put esp-stand-mic-led/main.py`
 
+## setup windows
+edit hosts (example):
+
+#ip of esp
+
+192.168.1.44    esp-stand-mic.krol44.com
+
+run exe, more information is here https://github.com/krol44/control-stand-mic-led/tree/master/soft-stand-mic-led#readme
+
 ## settings (not necessary)
 `export AMPY_PORT=/dev/tty.usbserial-0001`
 
 ## info
+Commands ampy: https://github.com/scientifichackers/ampy
+
 ```
-Commands ampy:
   get    Retrieve a file from the board.
   ls     List contents of a directory on the board.
   mkdir  Create a directory on the board.
