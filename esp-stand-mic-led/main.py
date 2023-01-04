@@ -1,11 +1,12 @@
 domainNotifyNewIP = ''
-pinOut = 5
+pinRed = 14 #D5
+pinBlue = 12 #D6
 serverIp = '0.0.0.0'
 serverPort = 8074
 wifiSsid = ''
 wifiPass = ''
 
-from machine import Pin
+from machine import Pin, PWM
 import time, ure
 import urequests as requests
 import network
@@ -28,36 +29,32 @@ def do_connect():
 print ('starting...')
 do_connect()
 
-relay = Pin(pinOut, Pin.OPEN_DRAIN)
+led = PWM(Pin(pinRed), 1000)
+led.duty(1024)
+
 power = 'off'
-lock = False
 
 def switcher(path):
-    global power, lock
+    print (path)
+    global power
     
     if path == '/on' and power == 'on': 
         return power
     
     if path == '/off' and power == 'off': 
         return power
-    
-    if lock == False:
-        lock = True
-
-        relay.value(0)
-        time.sleep(0.05)
-        relay.value(1)
-        
-        if power == 'off':
-            power = 'on'
-        else:
-            power = 'off'
             
-        time.sleep(0.3)
-        lock = False
+    if power == 'off':
+        power = 'on'
+        for dutyCycle in range(0, 1024):
+            led.duty(1024-dutyCycle)
+            time.sleep(0.001)
+    else:
+        power = 'off'
+        for dutyCycle in range(0, 1024):
+            led.duty(dutyCycle)
+            time.sleep(0.001)
         
-        return power
-    
     return power
 
 def parseURL(url):
